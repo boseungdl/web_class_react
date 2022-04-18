@@ -2,7 +2,7 @@ import React from 'react'
 
 function ContTitle(props) {
   return (
-    <section className={`cont__title ${props.color} ${props.font__corlor}`}>
+    <section className={`cont__title ${props.color} ${props.font__color}`}>
         <div className="container">
             <h1>
                 <strong>{props.title[0]}</strong>

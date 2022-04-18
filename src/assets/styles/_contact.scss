@@ -1,0 +1,120 @@
+.contact__cont {
+    color: var(--white);
+    background: #000;
+    height: 100vh;
+    .contact__inner {
+    align-content: center;
+    justify-content: center;
+    display: flex;
+    flex-wrap: wrap;
+    height: 100vh;
+
+        div {
+            line-height: 1;
+            font-family: var(--main_font);
+            font-size: 8vw;
+            width: 100%;
+            span {
+                display: block;
+            }
+            span:nth-child(1) {
+                
+            }
+            span:nth-child(2) {
+                text-align: center; 
+                padding-right: 13vw;
+            }
+            span:nth-child(3) {
+                text-align: right;
+            }
+        }
+
+        div:nth-child(2) {
+            text-align: right;
+            p {
+                margin-top: 5vw;
+                line-height: 1.5;
+                display: inline-block;
+                width: 30%;
+                font-size: 16px;
+                text-align: left;
+                font-family: var(--kor_font);
+            }
+        }
+
+       
+    }
+}
+@media(max-width:1200px){
+    .contact__cont {
+        .contact__inner {
+            
+
+            div {
+                    
+
+                span {
+                   
+                }
+                span:nth-child(1) {
+                    
+                }
+                span:nth-child(2) {
+                    text-align: left;
+                }
+                span:nth-child(3) {
+                    text-align: left;
+                }
+            }
+        
+            div:nth-child(2) {
+
+                text-align: center;
+
+                p {
+                width: 100%;
+                }
+            }
+        }
+    }
+  
+
+}
+@media(max-width:600px){
+    .contact__cont {
+        .contact__inner {
+            text-align: center;
+
+            div {
+                    
+
+                span {
+                    font-size: 60px;
+                }
+                span:nth-child(1) {
+                    text-align: center;
+                }
+                span:nth-child(2) {
+                    text-align: center;
+                    padding: 0;
+                }
+                span:nth-child(3) {
+                    text-align: center;
+                }
+            }
+        
+            div:nth-child(2) {
+
+                text-align: center;
+
+                p {
+                    
+                    width: 80%;
+                    font-size: 12px;
+                }
+            }
+        }
+    }
+  
+
+}

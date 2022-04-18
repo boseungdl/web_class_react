@@ -1,21 +1,22 @@
 import React from "react";
-import Header from "../includes/Header";
-import Contents from "../includes/Contents";
-import Footer from "../includes/Footer";
+import Header from "../layout/Header";
+import Contents from "../layout/Contents";
+import Footer from "../layout/Footer";
+import ScriptCont from "../includes/ScriptCont";
+import Contact from "../layout/Contact";
+import ContTitle from "../includes/ContTitle";
 
 function Youtube(){
     return (
         <>
-        <Header />
-        <Contents>
-            <section className="youtube__cont">
-                <div className="youtube__inner">
-                    <div>youtube</div>
-                </div>
-            </section>
-        </Contents>
-        <Footer />
-    </>
+            <Header />
+            <Contents>
+                <ContTitle title={["Youtube", "book"]}/>
+                <ScriptCont />
+                <Contact />
+            </Contents>
+            <Footer />
+        </>
     )
 }
 

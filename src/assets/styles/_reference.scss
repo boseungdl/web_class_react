@@ -1,0 +1,31 @@
+
+.reference__cont {
+    background: #000;
+    font-family: var(--Chosunilbo);
+
+    .reference__inner {
+        color: #fff;
+      
+         
+         h3 {
+             font-size: 30px;
+             margin-bottom: 10px;
+         }
+         ul {
+             
+     
+             li {
+                 border-top: 1px solid #fff;
+                 padding: 15px 50px;
+     
+                 span {
+                     display: inline-block;
+                     width: 30%
+                 }
+                 em {
+                     
+                 }
+             }
+         }
+     }
+}
