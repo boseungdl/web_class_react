@@ -68,7 +68,12 @@ body {
     //     animation: blur-text 1.5s 1.2s infinite linear alternate;
     // }
 }
-
+#loading.light {
+    background-color: #fff;
+}
+.loading__text.light span {
+    color: var(--black);
+}
 @keyframes blur-text {
     0% {
         filter: blur(0px);

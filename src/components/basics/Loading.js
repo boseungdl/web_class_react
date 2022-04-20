@@ -1,10 +1,10 @@
 import React from 'react'
 
-function Loading() {
+function Loading(props) {
   return (
-    <div id='loading' className='loading__active'>
+    <div id={`loading`} className={`loading__active ${props.color}`}>
         <div className="loading">
-          <div className="loading__text">
+          <div className={`loading__text ${props.color}`}>
             <span>L</span>
             <span>O</span>
             <span>A</span>
