@@ -1,35 +1,40 @@
-
-.reference__cont {
-    background: #000;
-    font-family: var(--Chosunilbo);
-
-    .reference__inner {
-        color: #fff;
-      
-         
-         h3 {
-             font-size: 30px;
-             margin-bottom: 10px;
-         }
-         ul {
-             
-     
-             li {
-                 border-top: 1px solid #fff;
-                 padding: 15px 50px;
-     
-                 span {
-                     display: inline-block;
-                     width: 30%
-                 }
-                 em {
-                     
-                 }
-             }
-         }
-     }
+//reference
+.refer__inner {
+    font-family: var(--subKor_font);
+    padding-bottom: 40vmax;
+    opacity: 0;
+    h3 {
+        color: var(--white);
+        font-size: 1.9em;
+        font-weight: 300;
+        margin-bottom: 2vh;
+    }
+    table {
+        border-collapse: collapse;
+        font-family: var(--subKor_font);
+        font-size: 16px;
+        font-weight: 300;
+    }
+    tr {
+        color: var(--white);
+        border-top: 1px solid var(--white);
+        td {
+            padding: 2vw 0;
+        }
+    }
+    tr:last-child {
+        border-bottom: 2px solid var(--white);
+    }
 }
-.reference__cont.light {
-    background: #fff;
-    color: #000;
+.refer__cont.light{
+    background-color: var(--light_bg);
+    h3 {
+        color: var(--black);
+    }
+    tr {
+        border-color: var(--black);
+    }
+    td {
+        color: var(--black);
+    }
 }
