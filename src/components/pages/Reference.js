@@ -49,7 +49,7 @@ class Reference extends React.Component {
             gsap.to(".cont__title em", {
                 duration: 0.7,
                 y: 0,
-                opacity: 1,
+                opacity: 0.9,
                 delay: 1.3,
                 ease: "power4.out",
                 scale : 1,
@@ -61,7 +61,7 @@ class Reference extends React.Component {
                 delay: 1.5,
                 ease: "power4.out"
             });
-        }, 10)
+        }, 1000)
     }
     getSite = async () => {
         const {
