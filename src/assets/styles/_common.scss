@@ -11,6 +11,10 @@
     background-color: var(--black);
     overflow: hidden;
 }
+#main.light {
+    background-color: var(--light_bg);
+    
+}
 
 //cont__title
 .cont__title {
@@ -54,6 +58,14 @@
 .light {
     background-color: var(--light_bg);
     color: #000;
+}
+.cont__contact.light {
+    background-color: var(--light_bg);
+    color: #000;
+    a {
+        border: 1px solid var(--black);
+    }
+  
 }
 
 //cont__contact

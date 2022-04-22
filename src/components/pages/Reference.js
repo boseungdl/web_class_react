@@ -163,8 +163,8 @@ class Reference extends React.Component {
                     <>
                         <Header color="light" />
                         <Contents>
-                            <ContTitle title={["Reference","book"]} />
-                            <section className="refer__cont">
+                            <ContTitle title={["Reference","book"]} color="light"/>
+                            <section className="refer__cont light">
                                 <div className="container">
                                     <div className="refer__inner">
                                         <h2>CSS</h2>
@@ -189,6 +189,7 @@ class Reference extends React.Component {
                                                         Related = {refer.Related}
                                                         mdn = {refer.mdn}
                                                         w3c = {refer.w3c}
+                                                        
                                                   />
                                             ))}
                                                                             
@@ -202,7 +203,7 @@ class Reference extends React.Component {
                                 </div>
                             </section>
                             {/* <ReferCont refers={refers} color="light" /> */}
-                            <ContContact />
+                            <ContContact color="light" />
                         </Contents>
                         <Footer color="light" />
                     </>

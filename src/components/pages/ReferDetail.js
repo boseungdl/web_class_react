@@ -47,6 +47,7 @@ class ReferDetail extends React.Component {
     render(){
         const {location} = this.props;
         console.log(location.state);
+
         if(location.state === undefined){
             return <div>잘못된 페이지입니다.</div>
         } else {
@@ -54,7 +55,7 @@ class ReferDetail extends React.Component {
                 <>
                     <Header color="light" />
                     <Contents color="light">
-                        <section className="refer__cont">
+                        <section className="refer__cont light">
                             <div className="container">
                                 <div className="refer__inner">
                                     <div className="refer__table">
@@ -91,25 +92,28 @@ class ReferDetail extends React.Component {
                                             </tbody>
                                         </table>
                                     </div>
-                                    <h3>정의(Definition)</h3>
-                                    <ul>
-                                        {location.state.Definition.map(el => (
-                                            <Definition 
-                                            key = {el}
-                                            definition = {el}
-                                            />
-                                        ))}
-                                    </ul>
-                                    <h3>접근성(Accessibility)</h3>
-                                    <ul>
-                                        {location.state.Accessibility.map(el => (
-                                            <Access 
-                                            key = {el}
-                                            access = {el}
-                                            />
-                                        ))}
-                                    </ul>
+                                    <div className="refer_info">
+                                        <h3>정의(Definition)</h3>
+                                        <ul className='ul'>
+                                            {location.state.Definition.map(el => (
+                                                <Definition 
+                                                key = {el}
+                                                definition = {el}
+                                                />
+                                            ))}
+                                        </ul>
+                                        <h3>접근성(Accessibility)</h3>
+                                        <ul className='ul'>
+                                            {location.state.Accessibility.map(el => (
+                                                <Access 
+                                                key = {el}
+                                                access = {el}
+                                                />
+                                            ))}
+                                        </ul>
 
+                                    </div>
+                                   
                                 </div>
                             </div>
                         </section>
