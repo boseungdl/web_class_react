@@ -126,6 +126,16 @@
         }
     }
 }
+.site {
+    margin-top: 30px;
+   
+  
+    li a {
+        display: inline-block;
+        width: 10vw;
+        text-align: center;
+    }
+}
 // .refer_info.light {
 //     background-color: var(--light_bg);
 //     color: var(--black);
@@ -141,6 +151,9 @@
 //     }
 // }
 .refer__cont.light {
+    .refer__inner h2 {
+        color: var(--black);
+    }
     background-color: var(--light_bg);
     .refer__list {
         border-top: 2px solid var(--dark_bg);
@@ -191,7 +204,18 @@
         }
     }
   
-    td {
-        
+    .site {
+
+        li a {
+            background: var(--black);
+            color: var(--white);
+            border: 2px solid rgb(175, 159, 159);
+        }
+        li:nth-of-type(3) a {
+            background: var(--white);
+            color: var(--black);
+            font-weight: 600;
+        }
+      
     }
 }

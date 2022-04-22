@@ -25,6 +25,14 @@ function Access(props){
 
 class ReferDetail extends React.Component {
     componentDidMount(){
+        const access = document.querySelector(".refer_info ul:nth-of-type(2)");
+        const accessH3 = document.querySelector(".refer_info h3:nth-of-type(2)");
+        console.log(accessH3)
+        if(access.innerText == ''){
+            console.log(accessH3)
+            access.style.display = "none"
+            accessH3.style.display = "none"
+        }
         const {location, history} = this.props;
         if(location.state === undefined){
             history.push("/reference");
@@ -46,7 +54,7 @@ class ReferDetail extends React.Component {
   
     render(){
         const {location} = this.props;
-        console.log(location.state);
+       
 
         if(location.state === undefined){
             return <div>잘못된 페이지입니다.</div>
@@ -111,9 +119,14 @@ class ReferDetail extends React.Component {
                                                 />
                                             ))}
                                         </ul>
-
                                     </div>
-                                   
+                                    <div className="site">
+                                        <ul>
+                                            <li><a href={location.state.mdn}>MDN</a></li>
+                                            <li><a href={location.state.w3c}>W3C</a></li>
+                                            <li><a href="./Reference">목록보기</a></li>
+                                        </ul>
+                                    </div>
                                 </div>
                             </div>
                         </section>
