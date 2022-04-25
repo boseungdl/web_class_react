@@ -1,39 +1,79 @@
 .script__cont {
-    color: var(--white);
-    height: 2500px;
-    font-family: var(--kor_font);
-    .script__inner {
-       
 
-        .script {
-            
-            h3 {
-                margin: 20px 0;
-            }
+    .container {
 
+        .script__inner {
 
-            .script_cont {
-                display: flex;
-                margin-bottom: 80px;
-               
-                
-                p:nth-child(1) {
-                   padding-right: 20px;
-                }
-                
-            }
+            .script__list {
 
-            .number {
-                
-                span {
-                    margin: 10px 10px 10px 0;
-                    display: inline-block;
-                    padding: 8px 15px;
-                    border-radius: 50%;
-                    border: 1px solid #fff;
-                    text-align: center;
+                ul {
+                    display: flex;
+                    flex-wrap: wrap;
+                    li {
+                        flex: 1 1 22%;
+                        margin: 1%;
+                        img {
+                            height: 300px;
+                        }
+                        p {
+                            color: var(--white);
+                            font-family: var(--subKor_font);
+                            padding-top: 7px;
+                        }
+                    }
                 }
             }
         }
     }
 }
+
+
+
+
+
+
+
+
+
+
+
+
+// .script__cont {
+//     color: var(--white);
+//     // height: 2500px;
+//     font-family: var(--kor_font);
+//     .script__inner {
+       
+
+//         .script {
+            
+//             h3 {
+//                 margin: 20px 0;
+//             }
+
+
+//             .script_cont {
+//                 display: flex;
+//                 margin-bottom: 80px;
+               
+                
+//                 p:nth-child(1) {
+//                    padding-right: 20px;
+//                 }
+                
+//             }
+
+//             .number {
+                
+//                 span {
+//                     margin: 10px 10px 10px 0;
+//                     display: inline-block;
+//                     padding: 8px 15px;
+//                     border-radius: 50%;
+//                     border: 1px solid #fff;
+//                     text-align: center;
+//                 }
+//             }
+//         }
+//     }
+// }

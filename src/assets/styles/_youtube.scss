@@ -1,0 +1,19 @@
+.youtube__list {
+    color: var(--white);
+    margin-bottom: 100px;
+    ul {
+        
+
+        li {
+            display: flex;
+            margin-bottom: 20px;
+            
+            width: 70%;
+            img {
+                width: 38%;
+                margin-right: 10px;
+            }
+            p {}
+        }
+    }
+}
