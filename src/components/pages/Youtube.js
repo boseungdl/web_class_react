@@ -1,39 +1,25 @@
-import React from "react";
+import React, {useEffect, useState} from "react";
 import Header from "../layout/Header";
 import Contents from "../layout/Contents";
 import Footer from "../layout/Footer";
-// import YoutubeSearch from "../includes/YoutubeSearch";
-import YoutubeList from "../includes/YoutubeList";
-import Contact from "../layout/Contact";
+import ContContact from "../includes/ContContact";
 import ContTitle from "../includes/ContTitle";
 import Loading from "../basics/Loading";
+import YoutubeSearch from "../includes/YoutubeSearch";
+import YoutubeList from "../includes/YoutubeList";
 import { gsap } from "gsap";
-import axios from "axios";
-import YoutubeCont from "../includes/YoutubeCont";
+// import YoutubeCont from "../includes/YoutubeCont";
+
+//require('dotenv').config() npm i dotenv
 
 
+function Youtube(){
+    const [videos, setVideos] = useState([])
 
-class Youtube extends React.Component {
-    state = {
-        isLoading : true,
-        list : [],
-        searchs: []
-    }
-
-
-    // getRefers = async () => {
-    //     const {
-    //         data : {
-    //             data : {htmlRefer}
-    //         }
-    //     } = await axios.get("https://webstoryboy.github.io/react2022/src/assets/json/refer.json")
-
-    //     this.setState({refers : htmlRefer, isLoading : false,})
-    //     this.mainAnimation();
-    // }
-
-    getSite = () => {
+    const mainanimation = () => {
         setTimeout(() => {
+            document.getElementById("loading").classList.remove("loading__active");
+
             gsap.to("#header", {
                 duration: 0.4,
                 top: 1,
@@ -58,48 +44,179 @@ class Youtube extends React.Component {
                 delay:1.0,
                 scale:1,
             })
-            
+            gsap.to(".youtube__list", {
+                duration: 0.5,
+                x:0,
+                y:0,
+                opacity:1,
+                delay:1.0,
+                scale:1,
+            })
+            gsap.to(".youtube__search", {
+                duration: 0.5,
+                x:0,
+                y:0,
+                opacity:1,
+                delay:1.0,
+                scale:1,
+            })
+                   
         }, 1000)
     }
+    mainanimation()
 
-    getYoutubes = async () => {
-        const lists = await axios.get("https://youtube.googleapis.com/youtube/v3/search?part=snippet&maxResults=28&type=video&q=%EC%84%B1%EC%8B%9C%EA%B2%BD&key=AIzaSyCqcVXwm-d6_KKvwbfe4dIO4zYp3TKoDRo")
-        // console.log(lists)
-        this.setState({lists, isLoading : false});
-        this.getSite();
+    const search = (query) => {
+        var requestOptions = {
+            method: 'GET',
+            redirect: 'follow'
+          };
+          
+          fetch(`https://youtube.googleapis.com/youtube/v3/search?part=snippet&maxResults=28&type=video&q=${query}&key=${process.env.REACT_APP_API}`, requestOptions)
+            .then(response => response.json())
+            .then(result => {
+                setVideos(result.items)
+               
+            })
+            .catch(error => console.log('error', error));
     }
 
-    componentDidMount(){
-        setTimeout(() => {
-            document.getElementById("loading").classList.remove("loading__active");
-            this.getYoutubes();
-      
-        },2000)
-    }
+    useEffect(() => {
+        var requestOptions = {
+            method: 'GET',
+            redirect: 'follow'
+          };
+          
+          fetch(`https://youtube.googleapis.com/youtube/v3/search?part=snippet&maxResults=28&type=video&q=%EC%84%B1%EC%8B%9C%EA%B2%BD&key=${process.env.REACT_APP_API}`, requestOptions)
+            .then(response => response.json())
+            .then(result => setVideos(result.items))
+            .catch(error => setVideos('error', error));
+    }, [])
 
+   
+     
+    return (
 
-    render() {
-        const { isLoading, lists } = this.state;
-        return (
             <>
-                {isLoading ? (
-                <Loading color ="black" />
-                ) : (
-                <>
-                    <Header />
-                    <Contents>
-                        <ContTitle title={["Youtube", "reference"]}/>
-                        {/* <YoutubeSearch /> */}
-                        <YoutubeCont lists={lists} />
-                        {/* <Contact /> */}
-                    </Contents>
-                    <Footer />
-                </>
-                )}
-          </>
-        )
-    }
+                <Loading />
+                <Header />
+                <Contents>
+                    <ContTitle title={["Youtube", "reference"]}/>
+                    <YoutubeSearch onSearch={search} />
+                    <YoutubeList videos={videos} />
+                    <ContContact />
+                </Contents>
+                <Footer />
+            </>
+        )           
 }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+// class Youtube extends React.Component {
+//     state = {
+//         isLoading : true,
+//         list : [],
+//         searchs: []
+//     }
+
+
+//     // getRefers = async () => {
+//     //     const {
+//     //         data : {
+//     //             data : {htmlRefer}
+//     //         }
+//     //     } = await axios.get("https://webstoryboy.github.io/react2022/src/assets/json/refer.json")
+
+//     //     this.setState({refers : htmlRefer, isLoading : false,})
+//     //     this.mainAnimation();
+//     // }
+
+//     getSite = () => {
+//         setTimeout(() => {
+//             gsap.to("#header", {
+//                 duration: 0.4,
+//                 top: 1,
+//             });
+//             gsap.to("#footer", {
+//                 duration: 0.4,
+//                 bottom: 1,
+//             });
+//             gsap.to(".cont__title strong", {
+//                 duration: 0.5,
+//                 x:0,
+//                 y:0,
+//                 opacity:1,
+//                 delay:1.0,
+//                 scale:1,
+//             })
+//             gsap.to(".cont__title em", {
+//                 duration: 0.5,
+//                 x:0,
+//                 y:0,
+//                 opacity:1,
+//                 delay:1.0,
+//                 scale:1,
+//             })
+            
+//         }, 1000)
+//     }
+
+//     getYoutubes = async (query) => {
+//         const searchs = await axios.get(`https://youtube.googleapis.com/youtube/v3/search?part=snippet&maxResults=28&type=video&q=${query}&key=AIzaSyCqcVXwm-d6_KKvwbfe4dIO4zYp3TKoDRo`)
+
+//         const lists = await axios.get("https://youtube.googleapis.com/youtube/v3/search?part=snippet&maxResults=28&type=video&q=%EC%84%B1%EC%8B%9C%EA%B2%BD&key=AIzaSyCqcVXwm-d6_KKvwbfe4dIO4zYp3TKoDRo")
+//         // console.log(lists)
+//         this.setState({lists, searchs, isLoading : false});
+//         this.getSite();
+//     }
+
+//     componentDidMount(){
+//         setTimeout(() => {
+//             document.getElementById("loading").classList.remove("loading__active");
+//             this.getYoutubes();
+      
+//         },2000)
+//     }
+
+
+//     render() {
+//         const { isLoading, searchs, lists } = this.state;
+//         return (
+//             <>
+//                 {isLoading ? (
+//                 <Loading color ="black" />
+//                 ) : (
+//                 <>
+//                     <Header />
+//                     <Contents>
+//                         <ContTitle title={["Youtube", "reference"]}/>
+//                         <YoutubeSearch searchs={searchs} />
+//                         <YoutubeCont lists={lists} />
+//                         {/* <Contact /> */}
+//                     </Contents>
+//                     <Footer />
+//                 </>
+//                 )}
+//           </>
+//         )
+//     }
+// }
 
 
 // class Youtube extends React.Component {

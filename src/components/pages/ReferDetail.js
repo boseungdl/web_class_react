@@ -28,7 +28,7 @@ class ReferDetail extends React.Component {
         const access = document.querySelector(".refer_info ul:nth-of-type(2)");
         const accessH3 = document.querySelector(".refer_info h3:nth-of-type(2)");
         console.log(accessH3)
-        if(access.innerText == ''){
+        if(access.innerText === ''){
             console.log(accessH3)
             access.style.display = "none"
             accessH3.style.display = "none"
