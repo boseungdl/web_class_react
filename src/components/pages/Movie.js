@@ -4,6 +4,7 @@ import Contents from "../layout/Contents";
 import Footer from "../layout/Footer";
 import ContTitle from "../includes/ContTitle";
 import MovieSearch from "../includes/MovieSearch";
+import ContContact from "../includes/ContContact";
 import MovieList from "../includes/MovieList";
 import Loading from "../basics/Loading";
 import { gsap } from "gsap";
@@ -73,7 +74,6 @@ function Movie(){
             .then(response => response.json())
             .then(result => {
                 setVideos(result.results)
-               
             })
             .catch(error => console.log('error', error));
     }
@@ -91,7 +91,7 @@ function Movie(){
             .catch(error => setVideos('error', error));
     }, [])
 
-   console.log(videos);
+  
      
     return (
 
@@ -102,7 +102,7 @@ function Movie(){
                     <ContTitle title={["movie", "reference"]}/>
                     <MovieSearch onSearch={search} />
                     <MovieList videos={videos} />
-                    {/* <ContContact /> */}
+                    <ContContact />
                 </Contents>
                 <Footer />
             </>
